@@ -6,7 +6,7 @@ ArcaneChat is a decentralized and secure instant messenger that is easy to use f
 
 • Extensible. Use mini-apps in chats like shopping lists, calendars or games.
 
-• Reliable. Works under bad and adverserial network conditions.
+• Reliable. Works under bad and adversarial network conditions.
 
 • Secure. Audited End-to-End encryption safe against network and server attacks.
 

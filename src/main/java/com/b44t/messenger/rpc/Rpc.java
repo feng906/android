@@ -10,8 +10,6 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
 
-import org.thoughtcrime.securesms.qr.QrShowFragment;
-
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -32,9 +30,13 @@ public class Rpc {
 
     private void processResponse() throws JsonSyntaxException {
         String jsonResponse = dcJsonrpcInstance.getNextResponse();
-        Response response = gson.fromJson(jsonResponse, Response.class);
 
-        if (response.id == 0) { // Got JSON-RPC notification/event, ignore
+        Response response = gson.fromJson(jsonResponse, Response.class);
+        if (response == null) {
+            Log.e(TAG, "Error parsing JSON: " + jsonResponse);
+            return;
+        } else if (response.id == 0) {
+            // Got JSON-RPC notification/event, ignore
             return;
         }
 
@@ -65,7 +67,7 @@ public class Rpc {
             while (true) {
                 try {
                     processResponse();
-                } catch (JsonSyntaxException e) {
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
@@ -154,8 +156,8 @@ public class Rpc {
         getResult("add_transport_from_qr", accountId, qrCode);
     }
 
-    public void addTransport(int accountId, EnteredLoginParam param) throws RpcException {
-        getResult("add_transport", accountId, param);
+    public void addOrUpdateTransport(int accountId, EnteredLoginParam param) throws RpcException {
+        getResult("add_or_update_transport", accountId, param);
     }
 
     private static class Request {

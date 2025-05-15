@@ -1,8 +1,20 @@
 # Delta Chat Android Changelog
 
-## Unreleased
+## 1.58.4
+2025-05
+
+* make in-chat apps properly work when they are not sent yet, in draft mode
+* better avatar quality
+* some more bug fixes and updated translations
+* update to core 1.159.5
+
+## v1.58.3
+2025-05
 
 * fix: webxdc.selfName uses the name otherwise displayed
+* fix potential crash on startup
+* add donation link to app settings
+* update to core 1.159.3
 
 ## v1.58.2
 2025-04
