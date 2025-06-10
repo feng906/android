@@ -297,6 +297,7 @@ public class ShareActivity extends PassphraseRequiredActionBarActivity implement
         text = cs.toString();
       }
     }
+
     if (text != null) {
       setSharedText(intent, text.toString());
     }
