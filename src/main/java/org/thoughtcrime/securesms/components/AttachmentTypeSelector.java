@@ -94,11 +94,6 @@ public class AttachmentTypeSelector extends PopupWindow {
       ViewUtil.findById(layout, R.id.location_button_label).setVisibility(View.GONE);
     //}
 
-    if (!DcHelper.isWebrtcConfigOk(DcHelper.getContext(context))) {
-      this.videoChatButton.setVisibility(View.GONE);
-      ViewUtil.findById(layout, R.id.invite_video_chat_label).setVisibility(View.GONE);
-    }
-
     setLocationButtonImage(context);
 
     setContentView(layout);
