@@ -18,7 +18,11 @@ android {
         includeInApk = false
         // Disables dependency metadata when building Android App Bundles.
         includeInBundle = false
+    applicationVariants.all { variant ->
+    variant.outputs.all { output ->
+        outputFileName = "ArcaneChat-${variant.name}.apk"
     }
+}}
     namespace "org.thoughtcrime.securesms"
     flavorDimensions "none"
     compileSdk 34
