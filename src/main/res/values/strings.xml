@@ -18,7 +18,7 @@
   <!-- End of custom strings -->
 
     <!-- common strings without special context -->
-    <string name="app_name">ArcaneChat</string>
+    <string name="app_name">比比陪练</string>
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
     <string name="clear_search">Clear Search</string>
